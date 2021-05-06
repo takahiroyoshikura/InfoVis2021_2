@@ -32,11 +32,6 @@ class ScatterPlot {
 			init() {
 									let self = this;
 
-				                                        self.div = d3.select("body")
-					                                             .append("div")
-				                                                     .text("task2")
-				                                                     .style("font-size","20px");
-
 									self.svg = d3.select( self.config.parent )
 										.attr('width', self.config.width)
 										.attr('height', self.config.height);
