@@ -85,7 +85,7 @@ class ScatterPlot {
 					        .attr("cx", d => self.xscale( d.x ) )
 					        .attr("cy", d => self.yscale( d.y ) )
 					        .attr("r", d => d.r )
-					        .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top}, ${self.config.margin.right} ,${self.config.margin.bottom})`);
+					        .attr('transform', `translate(${self.config.margin.left}, ${self.config.margin.top})`);
 
 					self.xaxis_group
 						.call( self.xaxis );
