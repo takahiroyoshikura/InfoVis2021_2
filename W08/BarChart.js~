@@ -14,7 +14,7 @@ class BarChart{
 	init() {
 		let self = this;
 
-		self.svg = d3.select('#drawing_region')
+		self.svg = d3.select( self.config.parent )
 			.attr('width', self.config.width)
 			.attr('height', self.config.height);
 
