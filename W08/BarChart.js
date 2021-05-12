@@ -27,8 +27,9 @@ class BarChart{
 		self.xscale = d3.scaleLinear()
 			.range([0, self.inner_width]);
 
-		self.yscale = d3.scaleLinear()
-			.range([0, self.inner_height]);
+		self.yscale = d3.scaleBand()
+			.range([0, self.inner_height])
+			.paddingInner(0.1);
 
 		self.xaxis = d3.axisBottom( self.xscale )
 			.ticks(5)
@@ -67,9 +68,9 @@ class BarChart{
 			.attr("height", self.yscale.bandwidth());
 
 		self.xaxis_group
-			.call(self.xaxis);
+			.call( self.xaxis );
 
 		self.yaxis_group
-			.call(self.yaxis);
+			.call( self.yaxis );
 	}
 }
