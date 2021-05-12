@@ -30,4 +30,53 @@ class LineChart{
 		self.yscale = d3.scaleLinear()
 			.range( [0, self.inner_height] );
 
+		self.xaxis = d3.axisBottom( self.xscale )
+			.ticks(3)
+			.tickSize(5)
+			.tickPadding(5);
 
+		self.yaxis = d3.axisLeft( self.yscale )
+			.ticks(3)
+			.tickSize(5)
+			.tickPadding(5);
+
+		self.xaxis_group = self.chart.append('g')
+			.attr('transform', `translate(0, ${self.inner_height})`);
+
+		self.yaxis_group = self.chart.append('g');
+	}
+
+	update() {
+		let self = this;
+
+		const space = 10;
+		const xmin = d3.min( self.data, d => d.x ) - space;
+		const xmax = d3.max( self.data, d => d.x ) + space;
+		self.xscale.domain( [xmin, xmax] );
+
+		const ymin = d3.min( self.data, d => d.y ) - space;
+		const ymax = d3.max( self.data, d => d.y ) + space;
+		self.yscale.domain( [ymax, ymin] );
+
+		self.render();
+	}
+
+	render() {
+		let self = this;
+
+		self.line = d3.line()
+			.x( d => d.x )
+			.y( d => d.y );
+
+		self.svg.append('path')
+			.attr('d', self.line(data))
+			.attr('stroke', 'black')
+			.attr('fill', 'none');
+
+		self.xaxis_group
+			.call( self.xaxis );
+
+		self.yaxis_group
+			.call( self.yaxis );
+	}
+}
