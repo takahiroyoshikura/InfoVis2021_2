@@ -28,8 +28,7 @@ class BarChart{
 			.range([0, self.inner_width]);
 
 		self.yscale = d3.scaleLinear()
-			.range([0, self.inner_height])
-			.paddingInner(0.1);
+			.range([0, self.inner_height]);
 
 		self.xaxis = d3.axisBottom( self.xscale )
 			.ticks(5)
@@ -50,7 +49,9 @@ class BarChart{
 		const xmax = d3.max(self.data, d => d.value);
 		self.xscale.domain( [0,xmax] );
 
-		self.yscale.domain( self.data.map(d => d.label) )
+		self.yscale.domain( self.data.map(d => d.label) );
+
+		self.yscale.paddingInner(0.1);
 
 		self.render();
 	}

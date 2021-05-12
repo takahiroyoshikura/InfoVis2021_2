@@ -51,8 +51,6 @@ class BarChart{
 
 		self.yscale.domain( self.data.map(d => d.label) );
 
-		self.yscale.paddingInner(0.1);
-
 		self.render();
 	}
 
