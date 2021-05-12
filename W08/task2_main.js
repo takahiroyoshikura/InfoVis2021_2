@@ -1,6 +1,6 @@
 d3.csv("https://takahiroyoshikura.github.io/InfoVis2021_2/W08/task2_data.csv")
 	.then( data => {
-		data.forEach( d => { d.x = +d.x; d.y = +d.y; });
+		data.forEach( d => { d.x = +d.x; d.y = +d.y; d.r = +d.r;});
 
 		var config = {
 			parent: '#drawing_region',

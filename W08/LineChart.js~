@@ -68,7 +68,7 @@ class LineChart{
 			.x( d => self.xscale( d.x ) )
 			.y( d => self.yscale( d.y ) );
 
-		self.svg.append('path')
+		self.chart.append('path')
 			.datum(self.data)
 			.attr('d', self.line)
 			.attr('stroke', 'black')
