@@ -49,7 +49,7 @@ class BarChart{
 		const xmax = d3.max(self.data, d => d.value);
 		self.xscale.domain( [0,xmax] );
 
-		self.yscale.domain( self.data.map(d => d.label) );
+		self.yscale.domain(self.data.map(d => d.label));
 
 		self.render();
 	}
@@ -67,9 +67,9 @@ class BarChart{
 			.attr("height", self.yscale.bandwidth());
 
 		self.xaxis_group
-			.call( self.xaxis );
+			.call(self.xaxis);
 
 		self.yaxis_group
-			.call( self.yaxis );
+			.call(self.yaxis);
 	}
 }
