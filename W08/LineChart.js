@@ -69,7 +69,7 @@ class LineChart{
 			.y( d => d.y );
 
 		self.svg.append('path')
-			.attr('d', self.line(data))
+			.attr('d', self.line(self.data))
 			.attr('stroke', 'black')
 			.attr('fill', 'none');
 
