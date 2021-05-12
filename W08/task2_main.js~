@@ -15,4 +15,3 @@ d3.csv("https://takahiroyoshikura.github.io/InfoVis2021_2/W08/task2_data.csv")
 	.catch( error => {
 		console.log( error );
 	});
-

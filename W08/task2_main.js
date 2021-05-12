@@ -5,7 +5,7 @@ d3.csv("https://takahiroyoshikura.github.io/InfoVis2021_2/W08/task2_data.csv")
 		var config = {
 			parent: '#drawing_region',
 			width: 256,
-			height: 128,
+			height: 256,
 			margin: {top:10, right:10, bottom:25, left:25}
 		};
 
