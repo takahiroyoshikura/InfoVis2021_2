@@ -74,6 +74,13 @@ class LineChart{
 			.attr('stroke', 'black')
 			.attr('fill', 'none');
 
+		self.chart.selectAll("circle")
+			.datum(self.data)
+			.append("circle")
+			.attr("cx", d => self.xscale( d.x ) )
+			.attr("cy", d => self.yscale( d.y ) )
+			.attr("r", d => d.r );
+
 		self.xaxis_group
 			.call( self.xaxis );
 

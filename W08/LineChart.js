@@ -72,10 +72,8 @@ class LineChart{
 			.datum(self.data)
 			.attr('d', self.line)
 			.attr('stroke', 'black')
-			.attr('fill', 'none');
-
-		self.chart.selectAll("circle")
-			.datum(self.data)
+			.attr('fill', 'none')
+			.selectAll("circle")
 			.append("circle")
 			.attr("cx", d => self.xscale( d.x ) )
 			.attr("cy", d => self.yscale( d.y ) )
