@@ -65,8 +65,8 @@ class LineChart{
 		let self = this;
 
 		self.line = d3.line()
-			.x( d => d.x )
-			.y( d => d.y );
+			.x( d => self.xscale( d.x ) )
+			.y( d => self.yscale( d.y ) );
 
 		self.svg.append('path')
 			.attr('d', self.line(self.data))
