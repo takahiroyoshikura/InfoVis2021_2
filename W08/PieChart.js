@@ -53,7 +53,7 @@ class PieChart{
 			.style('stroke-width', '2px');
 
 		self.svg.append('text')
-			.attr('transform', function(self.data){return "translate(" + self.label_arc.centroid(d) + ")"})
+			.attr('transform', function(self.data){return 'translate(' + self.label_arc.centroid(self.data) + ')'})
 			.text(function(self.data){return d.label});
 	}
 }
