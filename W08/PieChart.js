@@ -55,7 +55,7 @@ class PieChart{
 		self.svg.append('text')
 			.datum( self.data )
 			.attr('fill', 'blue')
-			.attr('transform', function(d){return "translate(" + text.centroid(d) + ")";})
+			.attr('transform', function(d){return "translate(" + self.text.centroid(d) + ")";})
 			.attr('dy', '5px')
 			.attr('font', '10px')
 			.attr('text-anchor', 'middle')
