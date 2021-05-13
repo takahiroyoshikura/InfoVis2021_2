@@ -44,7 +44,7 @@ class PieChart{
 			.enter()
 			.append('path')
 			.attr('d', self.arc)
-			.style('fill', d => self.data.color)
+			.style('fill', 'red')
 			.attr('stroke', 'white')
 			.style('stroke-width', '2px');
 	}
