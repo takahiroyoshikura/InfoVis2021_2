@@ -53,6 +53,7 @@ class PieChart{
 			.style('stroke-width', '2px');
 
 		self.svg.append('text')
+			.datum( self.data )
 			.attr('fill', 'white')
 			.attr('dy', '5px')
 			.attr('font', '10px')
