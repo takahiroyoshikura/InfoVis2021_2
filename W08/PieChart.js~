@@ -14,7 +14,7 @@ class PieChart{
 	init() {
 		let self = this;
 
-		//self.radius = Math.min( self.config.width, self.config.height ) / 2;
+		self.radius = Math.min( self.config.width, self.config.height ) / 2;
 
 		self.svg = d3.select( self.config.parent )
 			.attr('width', self.config.width)
