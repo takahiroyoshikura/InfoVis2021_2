@@ -34,8 +34,8 @@ class PieChart{
 			.outerRadius(self.radius);
 
 		self.text = d3.arc()
-			.innerRadius(radius - 30)
-			.outerRadius(radius - 30);
+			.innerRadius(self.radius - 30)
+			.outerRadius(self.radius - 30);
 
 		self.render();
 	}

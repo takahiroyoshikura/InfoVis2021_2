@@ -33,6 +33,10 @@ class PieChart{
 			.innerRadius(0)
 			.outerRadius(self.radius);
 
+		self.text = d3.arc()
+			.innerRadius(radius - 30)
+			.outerRadius(radius - 30);
+
 		self.render();
 	}
 
@@ -47,5 +51,12 @@ class PieChart{
 			.attr('fill', 'black')
 			.attr('stroke', 'white')
 			.style('stroke-width', '2px');
+
+		self.svg.append('text')
+			.attr('fill', 'white')
+			.attr('dy', '5px')
+			.attr('font', '10px')
+			.attr('text-anchor', 'middle')
+			.text(d.label);
 	}
 }
