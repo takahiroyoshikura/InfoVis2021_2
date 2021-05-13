@@ -5,7 +5,8 @@ d3.csv("https://takahiroyoshikura.github.io/InfoVis2021_2/W08/task1_data.csv")
 		var config = {
 			parent: '#drawing_region',
 			width: 256,
-			height: 256
+			height: 256,
+			radius: 128
 		};
 
 		const pie_chart = new PieChart( config, data );
