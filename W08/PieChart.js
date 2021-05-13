@@ -50,11 +50,10 @@ class PieChart{
 			.attr('d', self.arc)
 			.attr('fill', 'black')
 			.attr('stroke', 'white')
-			.style('stroke-width', '2px');
-
-		self.svg.append('text')
+			.style('stroke-width', '2px')
+			.append('text')
 			.datum( self.data )
-			.attr('fill', 'white')
+			.attr('fill', 'blue')
 			.attr('dy', '5px')
 			.attr('font', '10px')
 			.attr('text-anchor', 'middle')
