@@ -43,7 +43,7 @@ class PieChart{
 	render() {
 		let self = this;
 
-		self.pie_chart = self.svg.selectAll('pie')
+		self.svg.selectAll('pie')
 			.data( self.pie(self.data) )
 			.enter()
 			.append('path')
@@ -52,7 +52,7 @@ class PieChart{
 			.attr('stroke', 'white')
 			.style('stroke-width', '2px');
 
-		self.pie_chart.append('text')
+		self.svg.append('text')
 			.attr('transform', function(self.data){return 'translate(' + self.label_arc.centroid(d) + ')'})
 			.text(function(self.data){return d.label});
 	}
