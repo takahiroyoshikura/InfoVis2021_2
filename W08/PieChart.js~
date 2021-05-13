@@ -4,7 +4,8 @@ class PieChart{
 		this.config = {
 			parent: config.parent,
 			width: config.width || 256,
-			height: config.height || 256
+			height: config.height || 256,
+			radius: config.radius || 128
 		}
 		this.data = data;
 		this.init();
@@ -13,7 +14,7 @@ class PieChart{
 	init() {
 		let self = this;
 
-		self.radius = Math.min( self.config.width, self.config.height ) / 2;
+		//self.radius = Math.min( self.config.width, self.config.height ) / 2;
 
 		self.svg = d3.select( self.config.parent )
 			.attr('width', self.config.width)
