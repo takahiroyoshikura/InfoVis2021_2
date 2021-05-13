@@ -30,8 +30,12 @@ class PieChart{
 			.value( d => d.value );
 
 		self.arc = d3.arc()
-			.innerRadius(100)
+			.innerRadius(0)
 			.outerRadius(self.radius);
+
+		self.label_arc = d3.arc()
+			.innerRadius(self.radius - 30)
+			.outerRadius(self.radius - 30)
 
 		self.render();
 	}
@@ -39,13 +43,17 @@ class PieChart{
 	render() {
 		let self = this;
 
-		self.svg.selectAll('pie')
+		self.pie_chart = self.svg.selectAll('pie')
 			.data( self.pie(self.data) )
 			.enter()
 			.append('path')
 			.attr('d', self.arc)
-			.style('fill', 'red, blue, yellow, orange, green')
+			.style('fill', 'brack')
 			.attr('stroke', 'white')
 			.style('stroke-width', '2px');
+
+		self.pie_chart.append('text')
+			.attr('transform', function(self.data){return 'translate(' + self.label_arc.centroid(d) + ')'})
+			.text(function(self.data){return d.label});
 	}
 }

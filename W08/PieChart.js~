@@ -30,7 +30,7 @@ class PieChart{
 			.value( d => d.value );
 
 		self.arc = d3.arc()
-			.innerRadius(0)
+			.innerRadius(100)
 			.outerRadius(self.radius);
 
 		self.render();
@@ -44,7 +44,7 @@ class PieChart{
 			.enter()
 			.append('path')
 			.attr('d', self.arc)
-			.style('fill', 'red')
+			.style('fill', 'red, blue, yellow, orange, green')
 			.attr('stroke', 'white')
 			.style('stroke-width', '2px');
 	}
