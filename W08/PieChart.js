@@ -54,6 +54,6 @@ class PieChart{
 
 		self.svg.append('text')
 			.attr('transform', `translate(${self.label_arc})`)
-			.text(function(self.data){return d.label});
+			.text(d => self.data.label);
 	}
 }
