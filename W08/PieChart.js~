@@ -33,10 +33,6 @@ class PieChart{
 			.innerRadius(0)
 			.outerRadius(self.radius);
 
-		self.text = d3.arc()
-			.innerRadius(self.radius - 30)
-			.outerRadius(self.radius - 30);
-
 		self.render();
 	}
 
@@ -48,17 +44,8 @@ class PieChart{
 			.enter()
 			.append('path')
 			.attr('d', self.arc)
-			.attr('fill', 'black')
+			.attr('fill', d => self.data.color)
 			.attr('stroke', 'white')
 			.style('stroke-width', '2px');
-
-		self.svg.append('text')
-			.datum( self.data )
-			.attr('fill', 'blue')
-			.attr('transform', function(d){return "translate(" + self.text.centroid(d) + ")";})
-			.attr('dy', '5px')
-			.attr('font', '10px')
-			.attr('text-anchor', 'middle')
-			.text(d => d.label);
 	}
 }
