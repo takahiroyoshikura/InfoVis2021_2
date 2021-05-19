@@ -14,6 +14,12 @@ d3.csv("https://vizlab-kobe-lecture.github.io/InfoVis2021/W08/data1.csv")
 
 	            const bar_chart = new BarChart( config, data );
 	            bar_chart.update();
+
+	            d3.select('#reverse')
+		    .on('click', d => {
+		    data.reverse();
+		    BarChart( config, data ).update();
+		    });
 	        })
     .catch( error => {
 	            console.log( error );
