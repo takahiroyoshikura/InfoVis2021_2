@@ -46,7 +46,7 @@ const yaxis_group = chart.append('g')
 update( data );
 
 function update(data) {
-	svg.selectAll("rect")
+	chart.selectAll("rect")
 		.data(data)
 		.join("rect")
 		.transition()
