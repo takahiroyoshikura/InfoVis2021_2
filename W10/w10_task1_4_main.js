@@ -30,3 +30,11 @@ d3.select('#descend')
 		});
 		update(data);
 	});
+
+d3.select('#ascend')
+	.on('click',function() {
+		data.sort(function(a,b) {
+			return d3.ascending(a,b);
+		});
+		update(data);
+	});

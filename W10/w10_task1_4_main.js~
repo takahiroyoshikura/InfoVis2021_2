@@ -22,3 +22,11 @@ d3.select('#reverse')
 	            data.reverse();
 	            update(data);
 	        });
+
+d3.select('#descend')
+	.on('click',function() {
+		data.sort(function(a,b) {
+			return d3.descending(a,b);
+		});
+		update(data);
+	});
