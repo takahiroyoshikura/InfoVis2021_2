@@ -63,9 +63,7 @@ const yaxis_group = chart.append('g')
 //		update(data);
 //	});
 
-chart.selectAll("rect")
-	.data(data)
-	.enter()
+chart.selectAll("rect").data(data).enter()
 	.append("rect")
 	.attr("x", 0)
 	.attr("y", d => yscale(d.label))
