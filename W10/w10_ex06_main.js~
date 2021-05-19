@@ -15,8 +15,6 @@ function update(data) {
 	        .attr("height", height);
 }
 
-update( data );
-
 d3.select('#reverse')
 	.on('click', d => {
 		data.reverse();
