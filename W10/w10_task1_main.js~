@@ -17,8 +17,6 @@ var svg = d3.select('#drawing_region')
 var chart = svg.append('g')
     .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-update( data );
-
 const inner_width = width - margin.left - margin.right;
 const inner_height = height - margin.top - margin.bottom;
 
@@ -44,6 +42,8 @@ const xaxis_group = chart.append('g')
 
 const yaxis_group = chart.append('g')
 	.call( yaxis );
+
+update( data );
 
 function update(data) {
 	svg.selectAll("rect")
