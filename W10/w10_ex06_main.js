@@ -1,5 +1,4 @@
 var svg = d3.select('#drawing_region');
-update( data );
 
 d3.csv("https://takahiroyoshikura.github.io/InfoVis2021_2/W10/w10_task1_data.csv", update );
 function update(data) {
@@ -15,6 +14,8 @@ function update(data) {
 	        .attr("width", d => d)
 	        .attr("height", height);
 }
+
+update( data );
 
 d3.select('#reverse')
 	.on('click', d => {
