@@ -15,6 +15,7 @@ function update(data) {
 	        .attr("y", (d,i) => padding + i * ( height + padding ))
 	        .attr("width", d => d)
 	        .attr("height", height);
+}
 
 
 d3.select('#reverse')
