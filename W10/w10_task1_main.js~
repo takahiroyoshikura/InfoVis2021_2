@@ -20,7 +20,7 @@ var chart = svg.append('g')
 const inner_width = width - margin.left - margin.right;
 const inner_height = height - margin.top - margin.bottom;
 
-const xscale = d3.scaleLinner()
+const xscale = d3.scaleLinear()
 	.domain([0, d3.max(data, d => d.value)])
 	.range([0, inner_width]);
 
