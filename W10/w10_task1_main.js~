@@ -43,23 +43,32 @@ const xaxis_group = chart.append('g')
 const yaxis_group = chart.append('g')
 	.call( yaxis );
 
-update( data );
+//update( data );
 
-function update(data) {
-	chart.selectAll("rect")
-		.data(data)
-		.join("rect")
-		.transition()
-		.duration(1000)
-		.attr("x", 0)
-		.attr("y", d => yscale(d.label))
-		.attr("width", d => xscale(d.value))
-		.attr("height", yscale.bandwidth());
-}
+//function update(data) {
+//	chart.selectAll("rect")
+//		.data(data)
+//		.join("rect")
+//		.transition()
+//		.duration(1000)
+//		.attr("x", 0)
+//		.attr("y", d => yscale(d.label))
+//		.attr("width", d => xscale(d.value))
+//		.attr("height", yscale.bandwidth());
+//}
 
-d3.select('#reverse')
-	.on('click', d => {
-		data.reverse();
-		update(data);
-	});
+//d3.select('#reverse')
+//	.on('click', d => {
+//		data.reverse();
+//		update(data);
+//	});
+
+chart.selectAll("rect")
+	.data(data)
+	.enter()
+	.append("rect")
+	.attr("x", 0)
+	.attr("y", d => yscale(d.label))
+	.attr("width", d => xscale(d.value))
+	.attr("height", yscale.bandwidth());
 
