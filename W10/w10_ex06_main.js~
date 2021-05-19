@@ -22,3 +22,15 @@ d3.select('#reverse')
 	            data.reverse();
 	            update(data);
 	        });
+
+d3.select('#descend')
+	.on('click', d => {
+		data.descend();
+		update(data);
+	});
+
+d3.select('#ascend')
+	.on('click', d => {
+		data.ascend();
+		update(data);
+	});
