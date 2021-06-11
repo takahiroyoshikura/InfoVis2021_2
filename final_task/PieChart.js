@@ -5,6 +5,7 @@ class PieChart {
 			width: config.width || 256,
 			height: config.height || 256,
 			margin: config.margin || {top:10, right:10, bottom:10, left:10},
+			title: config.title || '',
 			inner_radius: config.inner_radius || 0,
 			outer_radius: config.outer_radius || (config.width - config.margin.left - config.margin.right)/2
 		};
@@ -32,6 +33,15 @@ class PieChart {
 		        .outerRadius(self.config.outer_radius);
 
 		self.radius = Math.min(self.inner_width, self.inner_height) / 2;
+
+		const title_space = 20;
+		self.svg.append('text')
+			.style('font-size', '20x')
+		        .style('font-weight', 'bold')
+		        .attr('text-anchor', 'middle')
+		        .attr('x', self.config.width / 2)
+		        .attr('y', self.config.margin.top - title_space)
+		        .text( self.config.title );
 
 		self.color_palette = d3.scaleOrdinal(d3.schemeSet1);
 	}
@@ -65,7 +75,7 @@ class PieChart {
 		        .attr('transform', d => `translate(${self.arc.centroid(d)})`)
 		        .style('font-size', '15px')
 		        .attr('text-anchor', 'middle')
-		        .text(d => d.data.label);
+		        .text(d => d.data.label + d.data.batting);
 	}
 }
 

@@ -7,9 +7,8 @@ d3.csv("https://takahiroyoshikura.github.io/InfoVis2021_2/final_task/data1.csv")
 			width: 512,
 			height: 512,
 			margin: {top:25, right:10, bottom:50, left:50},
-			title: 'Fig 1',
 			xlabel: 'month',
-			ylabel: 'hits'
+			ylabel: 'hits',
 		};
 
 		const line_chart = new LineChart( config, data );
