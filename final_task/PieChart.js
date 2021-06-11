@@ -36,7 +36,7 @@ class PieChart {
 
 		const title_space = 20;
 		self.svg.append('text')
-			.style('font-size', '20x')
+			.style('font-size', '40x')
 		        .style('font-weight', 'bold')
 		        .attr('text-anchor', 'middle')
 		        .attr('x', self.config.width / 2)
@@ -71,7 +71,7 @@ class PieChart {
 		        .data(self.pie(self.data))
 		        .enter()
 		        .append('text')
-		        .attr('fill', 'white')
+		        .attr('fill', 'black')
 		        .attr('transform', d => `translate(${self.arc.centroid(d)})`)
 		        .style('font-size', '15px')
 		        .attr('text-anchor', 'middle')
