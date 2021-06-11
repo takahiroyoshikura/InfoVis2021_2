@@ -43,8 +43,7 @@ class LineChart {
 		self.xaxis_group = self.chart.append('g')
 		        .attr('transform', `translate(0, ${self.inner_height})`);
 
-		self.yaxis_group = self.chart.append('g')
-			.attr('transform', `translate(0, ${self.inner_height})`);
+		self.yaxis_group = self.chart.append('g');
 
 		const title_space = 10;
 		self.svg.append('text')

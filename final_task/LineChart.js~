@@ -74,7 +74,7 @@ class LineChart {
 	update() {
 		let self = this;
 
-		const space = 5;
+		const space = 1;
 		const xmin = d3.min(self.data, d => d.x) - space;
 		const xmax = d3.max(self.data, d => d.x) + space;
 		self.xscale.domain([xmin, xmax]);
